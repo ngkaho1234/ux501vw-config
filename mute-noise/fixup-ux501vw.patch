@@ -1,6 +1,13 @@
-diff -ruNp linux-4.4.8-a/sound/pci/hda/patch_realtek.c linux-4.4.8-b/sound/pci/hda/patch_realtek.c
---- linux-4.4.8-a/sound/pci/hda/patch_realtek.c	2016-04-20 14:44:02.000000000 +0800
-+++ linux-4.4.8-b/sound/pci/hda/patch_realtek.c	2016-05-03 16:31:30.815677146 +0800
+For reducing the noise from the headphone output on ASUS UX501VW,
+call the existing fixup, alc_fixup_headset_mode_alc668(), additionally.
+
+Thread: https://bbs.archlinux.org/viewtopic.php?id=209554
+
+Signed-off-by: Kaho Ng <ngkaho1234@gmail.com>
+---
+diff -ruNp a/sound/pci/hda/patch_realtek.c b/sound/pci/hda/patch_realtek.c
+--- a/sound/pci/hda/patch_realtek.c	2016-04-20 14:44:02.000000000 +0800
++++ b/sound/pci/hda/patch_realtek.c	2016-05-03 16:31:30.815677146 +0800
 @@ -6424,6 +6424,7 @@ enum {
  	ALC668_FIXUP_DELL_DISABLE_AAMIX,
  	ALC668_FIXUP_DELL_XPS13,
