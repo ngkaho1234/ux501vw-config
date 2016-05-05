@@ -1,4 +1,4 @@
-For reducing the noise from the headphone output on ASUS UX501VW,
+For reducing the noise from the headset output on ASUS UX501VW,
 call the existing fixup, alc_fixup_headset_mode_alc668(), additionally.
 
 Thread: https://bbs.archlinux.org/viewtopic.php?id=209554
