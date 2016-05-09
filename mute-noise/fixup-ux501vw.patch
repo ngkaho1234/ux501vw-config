@@ -8,30 +8,11 @@ Signed-off-by: Kaho Ng <ngkaho1234@gmail.com>
 diff -ruNp a/sound/pci/hda/patch_realtek.c b/sound/pci/hda/patch_realtek.c
 --- a/sound/pci/hda/patch_realtek.c	2016-04-20 14:44:02.000000000 +0800
 +++ b/sound/pci/hda/patch_realtek.c	2016-05-03 16:31:30.815677146 +0800
-@@ -6424,6 +6424,7 @@ enum {
- 	ALC668_FIXUP_DELL_DISABLE_AAMIX,
- 	ALC668_FIXUP_DELL_XPS13,
- 	ALC662_FIXUP_ASUS_Nx50,
-+	ALC668_FIXUP_ASUS_UX501VW,
- };
- 
- static const struct hda_fixup alc662_fixups[] = {
-@@ -6670,6 +6671,10 @@ static const struct hda_fixup alc662_fix
- 		.chained = true,
- 		.chain_id = ALC662_FIXUP_BASS_1A
- 	},
-+	[ALC668_FIXUP_ASUS_UX501VW] = {
-+		.type = HDA_FIXUP_FUNC,
-+		.v.func = alc_fixup_headset_mode_alc668,
-+	},
- };
- 
- static const struct snd_pci_quirk alc662_fixup_tbl[] = {
 @@ -6692,6 +6697,7 @@ static const struct snd_pci_quirk alc662
  	SND_PCI_QUIRK(0x1028, 0x0698, "Dell", ALC668_FIXUP_DELL_MIC_NO_PRESENCE),
  	SND_PCI_QUIRK(0x1028, 0x069f, "Dell", ALC668_FIXUP_DELL_MIC_NO_PRESENCE),
  	SND_PCI_QUIRK(0x103c, 0x1632, "HP RP5800", ALC662_FIXUP_HP_RP5800),
-+	SND_PCI_QUIRK(0x1043, 0x1080, "Asus UX501VW", ALC668_FIXUP_ASUS_UX501VW),
++	SND_PCI_QUIRK(0x1043, 0x1080, "Asus UX501VW", ALC668_FIXUP_HEADSET_MODE),
  	SND_PCI_QUIRK(0x1043, 0x11cd, "Asus N550", ALC662_FIXUP_ASUS_Nx50),
  	SND_PCI_QUIRK(0x1043, 0x13df, "Asus N550JX", ALC662_FIXUP_BASS_1A),
  	SND_PCI_QUIRK(0x1043, 0x129d, "Asus N750", ALC662_FIXUP_ASUS_Nx50),
