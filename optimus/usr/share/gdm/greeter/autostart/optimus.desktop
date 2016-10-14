@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Optimus
+Exec=/etc/X11/xinit/xinitrc.d/nvidia-optimus.sh
+NoDisplay=true
+X-GNOME-Autostart-Phase=DisplayServer
