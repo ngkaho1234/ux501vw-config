@@ -1,0 +1,7 @@
+#!/bin/bash
+
+XORGCONF_SWITCH_DIR=$(dirname "$0")/..
+
+. "$XORGCONF_SWITCH_DIR/config"
+
+. "$XORGCONF_SWITCH_DIR/$RenderGPU/Xsetup"

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+XORGCONF_SWITCH_DIR=$(dirname "$0")/..
+
+. "$XORGCONF_SWITCH_DIR/config"
+
+export XORGCONFIG=$XORGCONF_SWITCH_DIR/$RenderGPU/xorg.conf
+XORG_BIN=/usr/bin/X
+
+if [[ ! -z "$XorgBin" ]]; then
+	XORG_BIN=$XorgBin
+fi
+
+exec "$XORG_BIN" "$@"
